@@ -19,4 +19,12 @@ router.get('/book/list', async (req, res) => {
         .catch(err => res.status(400).send(err))
 })
 
+//get by id
+router.get('/book/:id', async (req, res) => {
+    const id = req.params.id
+    await Book.findById(id)
+        .then(book => res.status(200).send(book))
+        .catch(err => res.status(404).send(err))
+})
+
 module.exports = router
