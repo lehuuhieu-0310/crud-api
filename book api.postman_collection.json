@@ -117,6 +117,63 @@
 			"name": "book",
 			"item": [
 				{
+					"name": "create book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"try {\r",
+									"    pm.response.to.have.status(201)\r",
+									"    pm.test('create book successfully')\r",
+									"    const {data} = pm.response.json()\r",
+									"    pm.environment.set('id', data._id)\r",
+									"} catch(e) {\r",
+									"    pm.test('FAIL', () => {throw new Error(e.message)})\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\": \"dia ly\",\r\n    \"title\": \"dia ly\",\r\n    \"author\": \"a\",\r\n    \"price\":10000,\r\n    \"quantity\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/book/addnew",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"addnew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get all book",
 					"event": [
 						{
@@ -220,63 +277,6 @@
 					"response": []
 				},
 				{
-					"name": "create book",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"\r",
-									"try {\r",
-									"    pm.response.to.have.status(201)\r",
-									"    pm.test('create book successfully')\r",
-									"    const {data} = pm.response.json()\r",
-									"    pm.variables.set('id', data._id)\r",
-									"} catch(e) {\r",
-									"    pm.test('FAIL', () => {throw new Error(e.message)})\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"bookName\": \"dia ly\",\r\n    \"title\": \"dia ly\",\r\n    \"author\": \"a\",\r\n    \"price\":10000,\r\n    \"quantity\":1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/api/book/addnew",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"book",
-								"addnew"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "update book",
 					"event": [
 						{
@@ -286,7 +286,7 @@
 									"\r",
 									"try {\r",
 									"    pm.response.to.have.status(200)\r",
-									"    pm.test('delelte successfully')\r",
+									"    pm.test('update successfully')\r",
 									"} catch(e) {\r",
 									"    pm.test('FAIL', () => {throw new Error(e.message)})\r",
 									"}"
