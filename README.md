@@ -1,1 +1,23 @@
 # CRUD-API
+
+## Usage
+
+#### Install the dependencies
+
+npm i
+
+#### Create a file .env in root directory
+
+```
+
+SECRET_BCRYPT_KEY=your-key
+
+PORT=your-port
+
+MONGODB_URI=your-mongodb-uri
+
+```
+
+#### Run the application
+
+npm run dev

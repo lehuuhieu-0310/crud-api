@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose')
 try {
-    mongoose.connect('mongodb://localhost:27017/ManageBookAPI', {
+    mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
