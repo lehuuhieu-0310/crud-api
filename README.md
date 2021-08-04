@@ -20,4 +20,4 @@ MONGODB_URI=your-mongodb-uri
 
 npm run dev
 
-##### Or with this heroku app (https://shielded-plains-34506.herokuapp.com/) using Postman, import `book api.postman_collection.json` collection
+##### Or with this heroku app (https://shielded-plains-34506.herokuapp.com) using Postman, import `book api.postman_collection.json` collection
