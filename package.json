@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lehuuhieu-0310/crud-api.git"
+    "url": "git+https://github.com/lehuuhieu-0805/crud-api.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lehuuhieu-0310/crud-api/issues"
+    "url": "https://github.com/lehuuhieu-0805/crud-api/issues"
   },
-  "homepage": "https://github.com/lehuuhieu-0310/crud-api#readme",
+  "homepage": "https://github.com/lehuuhieu-0805/crud-api#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
